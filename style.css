@@ -1,0 +1,853 @@
+/* Fonts & Colors */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Geist', sans-serif;
+  color: #565B66;   /* secondary text color */
+  line-height: 1.6;
+  background-color: white;  
+}
+
+h1, h2, h3 {
+  font-family: 'Sansita', serif;
+  color: #15171A;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header - centered rounded container */
+.site-header {
+  display: flex;
+  justify-content: center; /* center the container */
+  width: 100%;
+  padding: 0; /* space above and below header */
+  background: transparent; /* hero background visible behind */
+  position: absolute;
+  z-index: 1000;
+  top: 32px; /* distance from the top of the viewport */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;     
+  margin-left: 30px; 
+  margin-right: 30px;  
+  position: relative; /* needed for dropdown positioning */     
+  background-color: #fff;    /* white background */
+  padding: 0.8rem 1.5rem;    /* top/bottom, left/right padding */
+  border-radius: 32px;       /* round corners */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.header-logo img {
+  height: 20px; /* desktop size */
+}
+
+/* Navigation */
+.header-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.header-nav a:hover {
+  color: #2D51FB;
+}
+
+/* Register button */
+.header-action .btn {
+  padding: 8px 16px;
+  background-color: #2D51FB;
+  color: #fff;
+  border-radius: 58px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-logo-left img {
+    height: 22px; /* change this value to adjust the height */
+  }
+
+.header-action .btn:hover {
+  background-color: #052EF0;
+}
+
+.header-logo-right {
+    display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Animate hamburger into X when active */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 8px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -5px);
+}
+
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+  .header-container {
+  /* width: 75%;         */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+  .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  
+}
+
+  /* Left side: vertical menu (hidden until active) */
+  .header-left {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  
+  .header-left.active {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  
+  .header-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .header-nav a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Show logo-right only when menu inactive */
+  .header-logo-right {
+    display: block;
+  }
+
+  /* Hide logo-right when menu active */
+  .header-left.active ~ .header-right .header-logo-right {
+    display: none;
+  }
+
+  .menu-toggle.active {
+    padding-bottom: 240px;  /* align active menu toggle with inactive one */
+    padding-left: 82%;  /* align active menu toggle with inactive one */
+    color: #1a1a1a;
+  }
+  .menu-toggle .bar {
+  display: flex;
+  height: 3px;
+  width: 100%;
+  background-color: #1a1a1a; 
+}
+
+.menu-toggle {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    align-items: flex-start;
+  }
+  
+
+  .header-logo-left img {
+    height: 20px; /* change this value to adjust the height */
+  }
+
+  /* Optional: control logo-right height */
+  .header-logo-right img {
+    height: 20px; /* change this value to adjust the height */
+  }
+}
+
+
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  flex-direction: column;
+  margin: 0;          /* remove any margin */
+  min-height: 100vh;               /* take full viewport height */
+  padding: 6rem 5%;
+  background-size: cover;
+  background: linear-gradient(
+    to bottom,
+    rgba(108, 127, 224, 0.144),   /* #2D51FB at 20% opacity */
+    rgba(10, 7, 1, 0)        /* #0A0701 at 0% opacity */
+  );
+  color: #15171A; 
+}
+
+
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;                /* space for header height */
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h1 {
+  text-align: left;
+  font-size: 3rem; /* adjust as you like */
+  margin-bottom: 2rem;
+}
+
+.hero-left .btn {
+  margin-top: 1rem;
+  padding: 10px 16px;
+  background-color: #2D51FB; /* your brand color */
+  color: white;
+  border: none;
+  border-radius: 58px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none; /* 👈 removes underline */
+  font-size: 14px; /* 👈 adjust this */
+  transition: all 0.3s ease; /* smooth effect */
+}
+
+.hero-left .btn:hover {
+  background: #052EF0;
+}
+
+
+.hero-right {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-right p {
+  max-width: 400px; /* keeps the paragraph neat */
+  margin-left: auto;
+}
+
+.hero-image {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 4rem;
+}
+
+/* Mobile adjustments for hero */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 3% 1rem;
+  }
+  .hero-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-left .btn {
+    order: 2;            /* button second */
+    margin-bottom: 1rem;
+  }
+
+  .hero-left h1 {
+    order: 1;            /* heading first */
+    text-align: center; /* 👈 centers the text itself */
+  }
+
+  .hero-right p {
+    order: 3;            /* body text third */
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center; /* 👈 centers the text itself */
+  }
+
+  .hero-image {
+    order: 4;            /* image last */
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    align-items: center;
+  }
+}
+
+/* About Section */
+.about {
+  padding: 3rem 12rem; /* equal left & right margins */
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns: left = text, right = image */
+  align-items: start;             /* align content to the top of each column */
+  gap: 2rem;                      /* horizontal gap between columns */
+}
+
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px; /* spacing between heading, paragraph, button */
+  max-width: 500px; /* keep text readable */
+}
+
+.about-left h2 {
+  font-size: 2rem;
+  margin: 0; 
+  text-align: left;
+}
+
+.about-left p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-left .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #2D51FB;
+  color: white;
+  border-radius: 58px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.about-left .btn:hover {
+  background: #052EF0;
+}
+
+.about-right {
+  /* as a grid item — push it to the right side of its cell */
+  justify-self: end;    /* use center or start if you prefer different alignment */
+  display: block;       /* keep inner layout simple so image sizing works predictably */
+}
+
+
+.about-right img {
+  width: 280px;        /* target size relative to the right column — lower number makes it smaller */
+  max-width: 420px;  /* stops the image getting too big on wide screens */
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0;         /* remove accidental margins */
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;  /* smaller left & right padding on mobile */
+    margin-top: 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;  /* single column layout */
+    text-align: center;          /* center text */
+    gap: 1.5rem;                 /* spacing between stacked items */
+  }
+
+  .about-left {
+    align-items: center;   /* center align text & button */
+    max-width: 100%;       /* let it stretch full width */
+  }
+
+  .about-left h2 {
+    order: 1;              /* text comes first */
+    text-align: center;    /* center heading */
+  }
+
+  .about-left p {
+    order: 2;              /* text comes first */
+    text-align: center;    /* center paragraph */
+  }
+
+  .about-left .btn {
+    order: 3;              /* image comes after text */
+    margin-top: 0.5rem;
+  }
+  .about-right {
+    order: 3;              /* image comes after text */
+    margin-top: 1.5rem;    /* spacing above image */
+    justify-self: center;  /* center image horizontally */
+  }
+
+  .about-right img {
+    width: 350px;          /* adjust to make smaller or bigger */
+    max-width: 80%;        /* responsive limit */
+    height: auto;          /* keep proportions */
+    object-fit: contain;   /* fit inside box, no cropping */
+    justify-self: center;  /* center image horizontally */
+  }
+}
+
+
+/* Courses Section */
+.courses {
+  padding: 4rem 5%;  /* increases space above and below the courses section */
+}
+
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card {
+  position: relative;
+  height: 500px; /* card height */
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.course-card-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.course-card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent black for text visibility */
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+
+.courses > .container > h2 {
+  max-width: 800px;
+  margin: 0 auto 2rem;   /* increase space below the heading */
+  text-align: center;
+  line-height: 1.5;
+}
+
+.courses > .container > p {
+  max-width: 800px;
+  margin: 0 auto 1rem;   /* more space below paragraph before cards */
+  text-align: center;
+  line-height: 1.5;
+}
+
+.courses .courses-btn-wrapper {
+  text-align: center; /* centers inline/inline-block elements inside */
+  margin-bottom: 0.5rem; /* spacing between button and cards */
+}
+
+.courses .btn-register {
+  display: inline-block; /* hug content instead of full width */
+  margin: 1.5rem auto 2rem auto; /* centers horizontally */
+  padding: 8px 16px;
+  background-color: #2D51FB;
+  color: white;
+  border-radius: 58px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease;
+  text-align: center; /* ensures text is centered inside button */
+}
+.courses .btn-register:hover {
+  background: #052EF0;
+}
+
+
+
+.courses .btn-register:hover {
+  background-color: #052EF0;   /* slightly darker on hover */
+}
+
+.course-card-overlay h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.course-card-overlay p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.btn-text {
+  color: #2D51FB; /* brand blue */
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+.btn-text::after {
+  content: "→";
+  margin-left: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-card {
+  position: relative;
+  height: 400px; /* card height */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.courses {
+  padding: 2rem 7% 4rem;  /* increases space above and below the courses section */
+}
+.courses .btn-register {
+  margin: 0.5rem auto 2rem auto; /* centers horizontally */
+}
+  }
+
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f7f7f7; /* light gray */
+  padding: 3rem 0;
+}
+
+.testimonials .container h2,
+.testimonials .container p {
+  text-align: center;
+  margin: 0 auto 1.5rem auto;
+  max-width: 800px;
+}
+
+/* Grid */
+.testimonial-grid {
+  display: grid;
+  padding: 0 6rem; /* adds horizontal padding, adjust value as needed */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 per row on desktop */
+  gap: 24px; /* spacing between cards horizontally and vertically */
+  justify-items: center; /* center cards in grid cells */
+  margin-top: 2rem; /* space between paragraph and first row of cards */
+}
+
+/* Card */
+.testimonial-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center; /* center content inside card */
+  max-width: 280px;
+  /* box-shadow: 0 2px 6px rgba(0,0,0,0.05);  */
+}
+
+/* Image */
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 1rem 0.5rem auto;
+  object-fit: cover;
+}
+
+/* Name */
+.testimonial-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* Rating */
+.testimonial-rating {
+  width: 100px; /* adjust to your star image */
+  margin-bottom: 0.5rem;
+}
+
+/* Quote */
+.testimonial-quote {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0; /* spacing between lines */
+  line-height: 1.5; /* spacing inside multi-line text */
+  margin: 0;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Optional: quotation marks using pseudo-elements */
+.testimonial-quote::before {
+  content: "“";
+  font-size: 1rem;
+  vertical-align: top;
+  color: #ccc;
+  margin-right: 0.2rem;
+}
+
+.testimonial-quote::after {
+  content: "”";
+  font-size: 1rem;
+  color: #ccc;
+  margin-left: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+  padding: 3rem 0 4rem;
+}
+
+.testimonials .container h2,
+.testimonials .container p {
+  text-align: center;
+  margin: 0 auto 1.5rem auto;
+  max-width: 800px;
+  padding: 0;
+}
+.head-container {
+  text-align: center;
+  margin: 0 auto 1.5rem auto;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+.testimonial-grid {
+  padding: 0 4rem; /* adds horizontal padding, adjust value as needed */
+  margin-top: 42px;
+}
+}
+
+/* Contact Section Paragraph */
+.contact h2 {
+  text-align: center;       /* center the paragraph above the form */
+  max-width: 500px;         /* optional: keeps paragraph from stretching too wide */
+  margin: 0 auto 2rem auto; /* top 0, horizontally centered, bottom spacing */
+}
+
+.contact p {
+  text-align: center;       /* center the paragraph above the form */
+  max-width: 500px;         /* optional: keeps paragraph from stretching too wide */
+  margin: 0 auto 2rem auto; /* top 0, horizontally centered, bottom spacing */
+}
+
+/* Optional: spacing for the whole contact section */
+.contact {
+  padding: 3rem 0;
+}
+
+/* Form */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+input, select, button {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Contact Form Button */
+.contact button.btn {
+  width: 100%;                  /* same width as input/select fields */
+  margin-top: 1.5rem; /* adds space between the last input/select and the button */
+  background-color: #2D51FB;    /* change to your brand color */
+  color: #ffffff;               /* text color */
+  padding: 10px 16px;           /* adjust top/bottom and left/right padding */
+  font-size: 14px;              /* adjust text size */
+  border-radius: 58px;          /* adjust corner radius */
+  border: none;                 /* remove default border */
+  cursor: pointer;              /* pointer on hover */
+  transition: background 0.3s ease, transform 0.2s ease; /* smooth hover effect */
+  text-align: center;           /* make sure text is centered */
+  display: inline-block;        /* ensures proper sizing */
+}
+
+.contact button.btn:hover {
+  background-color: #052EF0;    /* optional hover color */
+}
+
+@media (max-width: 768px) {
+.contact {
+  padding: 3rem 2rem 4rem;
+}
+}
+
+
+/* Footer */
+.footer {
+  background-color: #1a1a1a; /* dark shade, replace with your header text color if needed */
+  color: #fff;
+  padding: 3rem 2rem;
+  font-family: Poppins, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* horizontal spacing */
+  flex-wrap: wrap;                /* stack vertically on smaller screens */
+  align-items: flex-start; /* align all children to the top */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;                      /* horizontal spacing between stacks */
+}
+
+.footer-stack {
+  display: flex;
+  flex-direction: column;         /* vertical inside each stack */
+  gap: 0.5rem;                    /* spacing between items vertically */
+  min-width: 150px;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+  margin-top: 1rem; /* pushes logo down slightly */
+}
+
+.footer-stack h4 {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: #aaaaaa;
+}
+
+.footer-stack a, 
+.footer-stack p {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-stack a:hover {
+  color: #2D51FB; /* brand blue hover */
+}
+
+
+/* Logo container to separate logo from copyright */
+.footer-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Add spacing between top content and copyright */
+.footer .copyright {
+  margin-top: 6rem;   /* space from top content */
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  /* Quick Links (2nd), Legal (3rd), Contact (4th) → come first */
+  .footer-stack:nth-child(2),
+  .footer-stack:nth-child(3),
+  .footer-stack:nth-child(4) {
+    order: 1;
+    text-align: left;
+  }
+
+  /* Logo + copyright (1st) → go last */
+  .footer-stack:first-child {
+    order: 2;
+    margin-top: 1rem;
+    text-align: left;
+  }
+  .footer-stack .copyright {
+  margin-top: 0.5rem; /* reduce spacing */
+}
+}
+
+/* Privacy Policy & Terms of Service Page & Student code of conduct */
+.policy {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding: 2rem;
+  line-height: 1.6;
+  color: #15171A;
+}
+
+.policy h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2D51FB; /* matches your brand */
+  text-align: center;
+}
+
+.policy p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+
