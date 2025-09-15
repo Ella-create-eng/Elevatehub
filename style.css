@@ -335,6 +335,7 @@ h1, h2, h3 {
     margin: 0 auto;
     align-items: center;
     margin-top: 1rem; /* or 0.5rem, whatever looks right */
+    margin-bottom: 0; /* remove extra bottom margin if any */
   }
 }
 
@@ -407,7 +408,7 @@ h1, h2, h3 {
 /* Responsive */
 @media (max-width: 768px) {
   .about {
-    padding: 1.5rem 1rem 0;  /* smaller left & right padding on mobile */
+    padding: 1.5rem 1rem 0rem;  /* smaller left & right padding on mobile */
     margin-top: 0;
   }
 
