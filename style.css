@@ -331,13 +331,16 @@ h1, h2, h3 {
   .hero-image {
     order: 4;            /* image last */
     max-width: 90%;
-    height: auto;
+    max-height: 200px;   /* restrict how tall the image can be on mobile */
+    height: 100%;
+    object-fit: cover;   /* fill the box, cropping extra space if needed */
     margin: 0 auto;
     align-items: center;
     margin-top: 0rem; /* or 0.5rem, whatever looks right */
     margin-bottom: 0; /* remove extra bottom margin if any */
     padding-top: 0;
     padding-bottom: 0;
+    border-radius: 20px;
   }
 }
 
