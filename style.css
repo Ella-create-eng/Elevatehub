@@ -403,7 +403,7 @@ h1, h2, h3 {
 /* Responsive */
 @media (max-width: 768px) {
   .about {
-    padding: 2rem 1rem;  /* smaller left & right padding on mobile */
+    padding: 0rem 1rem;  /* smaller left & right padding on mobile */
     margin-top: 0;
   }
 
@@ -437,6 +437,10 @@ h1, h2, h3 {
     order: 3;              /* image comes after text */
     margin-top: 1.5rem;    /* spacing above image */
     justify-self: center;  /* center image horizontally */
+    align-items: center;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .about-right img {
@@ -564,7 +568,7 @@ h1, h2, h3 {
 }
 
 .courses {
-  padding: 2rem 7% 4rem;  /* increases space above and below the courses section */
+  padding: 3rem 7% 4rem;  /* increases space above and below the courses section */
 }
 .courses .btn-register {
   margin: 0.5rem auto 2rem auto; /* centers horizontally */
