@@ -328,21 +328,18 @@ h1, h2, h3 {
     text-align: center; /* 👈 centers the text itself */
   }
 
+   .hero-image-wrapper {
+    display: flex;
+    justify-content: center; /* centers the image horizontally */
+    margin-top: 0;           /* remove extra spacing above */
+    padding-bottom: 0;        /* make sure no internal padding */
+  }
+
   .hero-image {
-    order: 4;            /* image last */
-    max-width: 90%;
-    max-height: 200px;   /* restrict how tall the image can be on mobile */
-    height: 50%;
-    object-fit: cover;   /* fill the box, cropping extra space if needed */
-    margin: 0 auto;
-    align-items: center;
-    margin-top: 0rem; /* or 0.5rem, whatever looks right */
-    margin-bottom: 0; /* remove extra bottom margin if any */
-    padding-top: 0;
-    padding-bottom: 0;
-    border-radius: 20px;
-    display: block;    /* removes extra inline spacing */
-    margin: 0 auto;    /* centers image horizontally */
+    max-width: 90%;          /* scales image to fit mobile screens */
+    height: auto;            /* maintains correct proportions */
+    display: block;           /* ensures no inline spacing */
+    margin-bottom: 0;         /* remove any default margin */
   }
 }
 
