@@ -411,7 +411,7 @@ h1, h2, h3 {
 /* Responsive */
 @media (max-width: 768px) {
   .about {
-    padding: 0rem 1rem ;  /* smaller left & right padding on mobile */
+    padding: 1rem 1rem 0rem;  /* smaller left & right padding on mobile */
     margin-top: 0;
   }
 
