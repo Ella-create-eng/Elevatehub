@@ -410,6 +410,7 @@ h1, h2, h3 {
   .about-grid {
     grid-template-columns: 1fr;  /* single column layout */
     text-align: center;          /* center text */
+    align-self: center;
     gap: 1.5rem;                 /* spacing between stacked items */
    justify-self: center;
   }
@@ -449,6 +450,7 @@ h1, h2, h3 {
     height: auto;          /* keep proportions */
     object-fit: contain;   /* fit inside box, no cropping */
     justify-self: center;  /* center image horizontally */
+    margin: 0 auto;   /* ✅ add this */
   }
 }
 
