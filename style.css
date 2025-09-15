@@ -10,7 +10,8 @@ body {
   font-family: 'Geist', sans-serif;
   color: #565B66;   /* secondary text color */
   line-height: 1.6;
-  background-color: white;  
+  background-color: white;
+  overflow-x: hidden;  
 }
 
 h1, h2, h3 {
@@ -295,6 +296,7 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   .hero {
     padding: 6rem 3% 0rem;
+    margin-bottom: 0;
   }
   .hero-top {
     flex-direction: column;
@@ -338,6 +340,7 @@ h1, h2, h3 {
 /* About Section */
 .about {
   padding: 3rem 12rem; /* equal left & right margins */
+  margin-top: 0;
 }
 
 .about-grid {
