@@ -342,7 +342,7 @@ h1, h2, h3 {
 }
 @media (max-width: 520px) {
   .hero-image {
-    height: 400px; 
+    height: 450px; 
   }
 }
 /* About Section */
