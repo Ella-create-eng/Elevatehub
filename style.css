@@ -344,6 +344,9 @@ h1, h2, h3 {
   .hero-image {
     height: 420px; 
   }
+  .hero {
+    padding: 6rem 5% 0rem;
+  }
 }
 /* About Section */
 .about {
