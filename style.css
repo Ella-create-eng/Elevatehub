@@ -368,7 +368,7 @@ h1, h2, h3 {
 }
 
 .about-left h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0; 
   text-align: left;
 }
@@ -503,6 +503,7 @@ h1, h2, h3 {
 }
 
 .courses > .container > h2 {
+  font-size: 1.8rem;
   max-width: 800px;
   margin: 0 auto 2rem;   /* increase space below the heading */
   text-align: center;
@@ -595,8 +596,14 @@ h1, h2, h3 {
   padding: 3rem 0;
 }
 
-.testimonials .container h2,
 .testimonials .container p {
+  text-align: center;
+  margin: 0 auto 1.5rem auto;
+  max-width: 800px;
+}
+
+.testimonials .container h2 {
+  font-size: 1.8rem;
   text-align: center;
   margin: 0 auto 1.5rem auto;
   max-width: 800px;
@@ -699,6 +706,7 @@ h1, h2, h3 {
 
 /* Contact Section Paragraph */
 .contact h2 {
+  font-size: 1.8rem;
   text-align: center;       /* center the paragraph above the form */
   max-width: 500px;         /* optional: keeps paragraph from stretching too wide */
   margin: 0 auto 2rem auto; /* top 0, horizontally centered, bottom spacing */
