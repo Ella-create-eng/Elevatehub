@@ -342,7 +342,7 @@ h1, h2, h3 {
 }
 @media (max-width: 520px) {
   .hero-image {
-    height: 450px; 
+    height: 400px; 
   }
 }
 /* About Section */
@@ -414,7 +414,7 @@ h1, h2, h3 {
 /* Responsive */
 @media (max-width: 768px) {
   .about {
-    padding: 1rem 1rem 0rem;  
+    padding: 2rem 1rem 0rem;  
     margin-top: 0;
   }
 
@@ -581,7 +581,7 @@ h1, h2, h3 {
 }
 
 .courses {
-  padding: 3rem 7% 4rem;  /* increases space above and below the courses section */
+  padding: 3.5rem 7% 4rem;  /* increases space above and below the courses section */
 }
 .courses .btn-register {
   margin: 0.5rem auto 2rem auto; /* centers horizontally */
