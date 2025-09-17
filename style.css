@@ -295,7 +295,7 @@ h1, h2, h3 {
 /* Mobile adjustments for hero */
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 3% 0rem;
+    padding: 6rem 5% 0rem;
     margin-bottom: 0;
     padding-bottom: 0;
   }
@@ -342,7 +342,7 @@ h1, h2, h3 {
 }
 @media (max-width: 520px) {
   .hero-image {
-    height: 450px; 
+    height: 420px; 
   }
 }
 /* About Section */
