@@ -1,0 +1,5 @@
+# robots.txt for Elevate Hub
+User-agent: *
+Disallow:
+
+Sitemap: https://www.elevatehub.info/sitemap.xml
